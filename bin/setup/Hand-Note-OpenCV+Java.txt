@@ -1,0 +1,27 @@
+https://www.udemy.com/course/opencv-and-java
+......................Lecture 02: Installtion
+[ OpenCV Java Docs ]
+https://opencv-java-tutorials.readthedocs.io/en/latest/01-installing-opencv-for-java.html
+
+[ Download Java JDK ]
+https://www.oracle.com/java/technologies/javase-jdk15-downloads.html
+
+[ Download OpenCV ]
+https://opencv.org/releases/
+
+....................Lecture 03: Eclipse setup
+Windows > Preferences > Java > Build Path > User Libraries 
+
+New (click) - opencv455 (select) - OK (click)
+
+[opencv455] - Add Extranal JARs - opencv-45.jar
+
+[opencv-455.jar . . ] - Native library Location:(None) - Edit
+ - (opencv ...  java\x64) - Ok - Apply and close
+
+# Create project - [deselect] create module-info.java file
+
+Build Path - Add Libraries - User Library - Next - opencv455 (select) - Finish
+
+
+
