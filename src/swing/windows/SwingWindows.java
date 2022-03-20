@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 class FrameWindow extends JFrame{
-	JLabel LabelMessage;
+	JLabel labelMessage;
 	JTextField txtfieldInput;
 	JButton btnClick;
 	JPanel p1,p2,p3;
@@ -20,9 +20,9 @@ class FrameWindow extends JFrame{
 		super(title);
 		setSize(320,240);
 		setLayout(new GridLayout(3,1,5,5));
-		LabelMessage = new JLabel("Hello World");
+		labelMessage = new JLabel("Hello World");
 		p1 = new JPanel();
-		p1.add(LabelMessage);
+		p1.add(labelMessage);
 		
 		txtfieldInput = new JTextField(20);
 		p2 = new JPanel();
@@ -44,6 +44,7 @@ class FrameWindow extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			if(e.getSource() == btnClick) {
 				JOptionPane.showMessageDialog(null, "Hello " + txtfieldInput.getText());
+				labelMessage.setText("Hello " + txtfieldInput.getText());
 			}
 		}
 		
