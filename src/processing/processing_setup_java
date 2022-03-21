@@ -1,0 +1,11 @@
+[Download]
+https://processing.org/download
+[Extract]
+processing-3.5.4-windows64.zip   --> processing-3.5.4
+[Add to BuildPath]
+processing-3.5.4 --> core --> library --> code.jar
+[Run with processing interfase][run]
+processing-3.5.4 --> processing.exe
+
+[Resources]
+https://happycoding.io/tutorials/java/processing-in-java
