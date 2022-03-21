@@ -12,7 +12,7 @@ public class DisplayTest {
 		System.out.println("DisplayTest");
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 		
-		String filePath = "src/displaytest/cat.jpg";
+		String filePath = "src/cat.jpg";
 		
 		Mat originalImage = Imgcodecs.imread(filePath);
 		if(originalImage.dataAddr()==0) {
