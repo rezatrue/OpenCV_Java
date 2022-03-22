@@ -22,6 +22,7 @@ public class ProcessingImage extends PApplet{
 	public void settings() {
 		String filePath = "src/cat.jpg";
 		img = Imgcodecs.imread(filePath);
+		//img = Highgui.imread(filePath); // opencv 2.4.9
 		size(800,600);
 	}
 	
@@ -40,6 +41,7 @@ public class ProcessingImage extends PApplet{
 		if(mat != null && !mat.empty()) {
 			MatOfByte matOfByte = new MatOfByte();
 			Imgcodecs.imencode(".jpg", mat, matOfByte); // for OpenCV 4.5.5
+			//import org.opencv.highgui.Highgui; // opencv 2.4.9 change library 
 			//Highgui.imencode(".jpg", mat, matOfByte); // for OpenCV 2.4.9
 			byte[] byteArray = matOfByte.toArray();
 			try {

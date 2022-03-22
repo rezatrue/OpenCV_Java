@@ -9,8 +9,11 @@ import javax.imageio.ImageIO;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
-import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.videoio.VideoCapture;
+import org.opencv.imgcodecs.Imgcodecs; // OpenCV 4.5.1
+import org.opencv.videoio.VideoCapture; // OpenCV 4.5.1
+
+//import org.opencv.highgui.Highgui; // OpenCV 2.4.9
+//import org.opencv.highgui.VideoCapture; // OpenCV 2.4.9
 
 import processing.core.PApplet;
 import processing.core.PConstants;
