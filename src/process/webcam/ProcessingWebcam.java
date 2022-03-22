@@ -1,4 +1,4 @@
-package process.image;
+package process.webcam;
 
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -10,29 +10,39 @@ import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfByte;
 import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.videoio.VideoCapture;
 
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PImage;
 
-public class ProcessingImage extends PApplet{
+public class ProcessingWebcam extends PApplet{
 	Mat img;
 	PImage pimg;
+	VideoCapture capture;
 	
 	public void settings() {
-		String filePath = "src/cat.jpg";
-		img = Imgcodecs.imread(filePath);
 		size(800,600);
+		capture = new VideoCapture(0);
+		if(capture.isOpened() == false) {
+			System.out.println("Unable to open camera");
+			capture.release();
+			System.exit(0);
+		}
+		img = new Mat();
 	}
 	
 	public void draw() {
-		pimg = matToPImage(img);
-		image(pimg, 0,0,400,300);
+		if(capture.read(img)) {
+			pimg = matToPImage(img);
+			image(pimg, 0, 0, 400, 300);
+		}
+
 	}
 	
 	public static void main(String[] args) {
 		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-		PApplet.main(ProcessingImage.class.getName());
+		PApplet.main(ProcessingWebcam.class.getName());
 	}
 	
 	private static PImage matToPImage(Mat mat) {
@@ -59,3 +69,4 @@ public class ProcessingImage extends PApplet{
 		
 	}
 }
+
